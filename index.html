@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Avaliação do Tutor</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="images/favicon.ico">
+  <!-- Importação de fontes do Google Fonts-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Londrina+Solid&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+      <img src="images/livro.png" alt="Main Picture">
+      <div class="message">
+        <p>Como foi a ajuda do tutor?</p>
+      </div>
+      <div class="stars">
+      <input type="radio" name="rating" id="rating-5">
+      <label for="rating-5"></label>
+      <input type="radio" name="rating" id="rating-4">
+      <label for="rating-4"></label>
+      <input type="radio" name="rating" id="rating-3">
+      <label for="rating-3"></label>
+      <input type="radio" name="rating" id="rating-2">
+      <label for="rating-2"></label>
+      <input type="radio" name="rating" id="rating-1">
+      <label for="rating-1"></label>
+      </div>
+      <div class="bottom-items">
+        <p>PULAR</p>
+        <button>confirmar</button>
+      </div>
+    </div>
+
+    <script>
+      const btn = document.querySelector('button');
+      const rating = document.querySelectorAll('input');
+      let index = -1;
+      function addClass() {
+        btn.classList.add('btn-checked');
+        rating.forEach((star, i) => {
+          if (star.checked) index = i;
+        })
+      }
+      rating.forEach(star => {
+        star.addEventListener('click', addClass)
+      })
+
+      function printNoOfStars() {
+        console.log(` ${5 - index} stars` );
+      }
+      btn.addEventListener('click', printNoOfStars)
+    </script>
+</body>
+</html>

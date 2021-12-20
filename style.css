@@ -1,0 +1,86 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+    min-width: 400px;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.message {
+  font-family: 'Londrina Solid';
+  font-size: 50px;
+  width: 350px;
+  line-height: 1;
+  margin: 30px 0;
+}
+
+.bottom-items {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  margin-top: 180px;
+  margin-bottom: 90px;
+}
+
+.bottom-items p {
+  color: #2cc6d0;
+  margin: auto 15px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.bottom-items button {
+  background-color: #c8c8c8;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  border: none;
+  box-shadow: 0px 3px 10px #c8c8c8;
+}
+
+.btn-checked {
+  background-color: #2cc6d0 !important;
+  box-shadow: 0px 3px 10px #2cc6d0 !important;
+}
+
+.stars {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  overflow: hidden;
+  flex-direction: row-reverse;
+}
+
+.stars > input {
+  display: none;
+}
+
+.stars > label {
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  margin-top: auto;
+  background-image: url("images/estrela_vazia.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 76%;
+  transition: .3s;
+}
+
+.stars > input:checked ~ label,
+.stars > input:checked ~ label ~ label {
+  background-image: url("images/estrela_cheia.svg");
+}
+
+.stars > input:checked ~ label:last-child,
+.stars > input:checked ~ label ~ label:last-child {
+  cursor: default;
+}
